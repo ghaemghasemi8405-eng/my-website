@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="یک وبسایت نمونه برای تمرین HTML, CSS و JavaScript با طراحی واکنش‌گرا">
+    <meta name="keywords" content="آموزش HTML, CSS, JavaScript, ریسپانسیو, طراحی سایت">
+    <meta name="author" content="آموزش پروژه محور">
+    <title>وبسایت نمونه</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2965/2965358.png">
+    <style>
+        body {
+            font-family: Tahoma;
+            margin: 0;
+            background-color: #f5f5f5;
+            direction: rtl;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background: #333;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+        }
+        nav a:hover {
+            background: #575757;
+        }
+
+        main {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #4CAF50;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #eee;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* 📱 موبایل */
+        @media screen and (max-width: 600px) {
+            main {
+                margin: 10px;
+                padding: 15px;
+            }
+            nav a {
+                flex: 100%;
+                border-top: 1px solid #444;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>وبسایت نمونه آموزشی</h1>
+</header>
+
+<nav>
+    <a href="#about">درباره ما</a>
+    <a href="#media">ویدئو و صدا</a>
+    <a href="#map">نقشه</a>
+    <a href="#contact">تماس</a>
+</nav>
+
+<main>
+    <section id="about">
+        <h2>درباره ما</h2>
+        <p>این وبسایت برای تمرین HTML, CSS و JavaScript ساخته شده است و شامل بخش‌های مختلفی برای یادگیری کامل طراحی وب است.</p>
+    </section>
+
+    <section id="media">
+        <h2>ویدئو و صدا</h2>
+        <video controls style="max-width:100%">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
+        </video>
+        <audio controls style="margin-top:10px; width:100%">
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+        </audio>
+    </section>
+
+    <section id="map">
+        <h2>نقشه ما</h2>
+        <iframe src="https://maps.google.com/maps?q=Tehran&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </section>
+
+    <section id="contact">
+        <h2>تماس با ما</h2>
+        <input type="text" id="name" placeholder="نام خود را وارد کنید">
+        <button onclick="sendMessage()">ارسال</button>
+        <div id="message"></div>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 همه حقوق محفوظ است | طراحی شده برای آموزش
+</footer>
+
+<script>
+    function sendMessage() {
+        let name = document.getElementById("name").value;
+        let messageBox = document.getElementById("message");
+        if (name.trim() === "") {
+            messageBox.style.color = "red";
+            messageBox.innerText = "لطفاً نام خود را وارد کنید.";
+        } else {
+            messageBox.style.color = "green";
+            messageBox.innerText = `ممنون ${name}، پیام شما ثبت شد.`;
+        }
+    }
+</script>
+
+</body>
+</html>
